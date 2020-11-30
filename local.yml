@@ -1,5 +1,16 @@
 - hosts: localhost
   become: true
+  
   tasks:
-  - name: Install htop
-    yum: name=htop
+  - name: Install Kerberos dependencies yum
+    yum: name={{item}}
+    with_items:
+      - gcc
+      - python-devel
+      - krb5-devel
+      - krb5-workstation
+
+  - name: Install Kerberos dependencies pip
+    pip: name={{item}}
+    with_items:
+      - pywinrm[kerberos]
