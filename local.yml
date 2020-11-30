@@ -10,9 +10,10 @@
       - krb5-devel
       state: latest
 
-  - name:
+  - name: Install Kerberos dependencies pip
     pip:
       name: 
       - pywinrm
+      - pywinrm[kerberos]
       state: latest
 
