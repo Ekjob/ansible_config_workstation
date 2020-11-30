@@ -2,15 +2,10 @@
   become: true
   
   tasks:
-  - name: Install Kerberos dependencies yum
-    yum: name={{item}}
-    with_items:
-      - gcc
-      - python-devel
+  - name: Install Kerberos dependencies dnf
+    dnf:
+      name:
+      - '@Development Tools'
+      - python3-devel
       - krb5-devel
-      - krb5-workstation
-
-  - name: Install Kerberos dependencies pip
-    pip: name={{item}}
-    with_items:
-      - pywinrm[kerberos]
+      state: latest
