@@ -9,3 +9,10 @@
       - python3-devel
       - krb5-devel
       state: latest
+
+  - name:
+    pip:
+      name: 
+      - pywinrm
+      state: latest
+
