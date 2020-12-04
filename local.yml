@@ -8,6 +8,7 @@
       - '@Development Tools'
       - python3-devel
       - krb5-devel
+      - python3-kerberos
       state: latest
 
   - name: Install Kerberos dependencies pip
